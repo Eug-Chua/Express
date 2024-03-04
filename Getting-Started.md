@@ -16,4 +16,8 @@ This command creates the `package.json` file in the folder.
 ```
 npm install express
 ```
+Once this is done, a new folder will appear: `node-modules`.
+
+4. Create `.gitignore` file
+In the folder, create a `.gitignore` file. In it, type `node_modules`. This removes all the modules showing in github.
 
