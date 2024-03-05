@@ -14,11 +14,14 @@ waxOn.setLayoutPath('./views/layouts'); // location of the layouts
 
 // custom helpers - make sure they're before the SETUP ROUTES step 
 // first parameter: refers to the name of the helper;
-// second parameter: refers to the function called when we use the helper
+// second parameter: refers to the function activated when we use the helper
 hbs.handlebars.registerHelper("ifEquals",
+// arg1: `favorite`
+// arg2: `apples`
+// options: `{{#each fruits}}` block
  function(arg1, arg2, options){
     if (arg1 == arg2) {
-        return options.fn(this); // `this` refers to the hbs file; specifically it is zooming into `#ifEquals` (the helper we initiated).
+        return options.fn(this); // `this` refers to the hbs file; specifically the name of the helper we initiated i.e `ifEquals`.
     } else {
         return options.inverse(this); 
     }
