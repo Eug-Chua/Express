@@ -1,0 +1,20 @@
+{
+  "name": "05-checkpoint",
+  "version": "1.0.0",
+  "description": "1. `express`: This is the HTTP framework that allows us to create a HTTP server. 2. `hbs`: Shortform for \"handlebars\". Hbs is a view engine, or a template engine that allows us to send HTML content to the client easily. 3. `wax-on`: Used for template inheritance; with this, we can create reusable templates.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3",
+    "hbs": "^4.2.0",
+    "nodemon": "^3.1.0",
+    "wax-on": "^1.2.2"
+  },
+  "devDependencies": {}
+}
