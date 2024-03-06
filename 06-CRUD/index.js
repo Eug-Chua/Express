@@ -49,6 +49,36 @@ app.get('/', function(req, res){
     }); // we can put `index` or `index.hbs`; both works.
 })
 
+// route to display the form
+app.get('/create', function(req,res){
+    res.render('create');
+})
+
+// route to process the form
+app.post('/create', function(req,res){
+    let selectedTags = [];
+    if (req.body.tags){
+        if (Array.isArray(req.body.tags)) {
+            selectedTags = req.body.tags;
+        } else {
+            selectedTags = [req.body.tags];
+        }
+    }
+
+    const newfood = {
+        id: Math.floor(Math.random() * 10000 + 1),
+        foodName: req.body.foodName,
+        calories: req.body.calories,
+        meal: req.body.meal,
+        tags: selectedTags,
+    };
+    foodRecords.push(newfood);
+    
+    // `res.direct()` tells the browser to go to the specified URL after action is done
+    res.redirect('/')
+    console.log(req.body);
+})
+
 // 3. START SERVER
 app.listen(3050, function(){
     console.log("Server has started.")
