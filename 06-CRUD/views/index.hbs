@@ -2,6 +2,33 @@
 
 {{#block "content"}}
 <h1>CICO Food Tracker</h1>
+
+<h2>Logged Food</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Food Name</th>
+            <th>Calories</th>
+            <th>Meal</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each foodRecords}}
+        <tr>
+            <th>{{this.id}}</th>
+            <th>{{this.foodName}}</th>
+            <th>{{this.calories}}</th>
+            <th>{{this.meal}}</th>
+            <th>{{this.tags}}</th>
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>
+
 {{/block}}
 
 {{/extends}}

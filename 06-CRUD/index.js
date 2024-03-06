@@ -17,9 +17,36 @@ app.use(express.urlencoded({
     extended: false
 }))
 
+// In-memory database
+const foodRecords = [
+    {
+        id: 1,
+        foodName: "Chicken Rice",
+        calories: 500,
+        meal:"lunch",
+        tags:["organic", "less oil"]
+    },
+    {
+        id:2,
+        foodName: "Clam Chowder",
+        calories: 450,
+        meal:"dinner",
+        tags:["homecooked"]
+    },
+    {
+        id:3,
+        foodName:"Tuna Sandwich",
+        calories: 390,
+        meal: "breakfast",
+        tags:["gluten-free"]
+    }
+]
+
 // 2. ROUTING
 app.get('/', function(req, res){
-    res.render("index"); // we can put `index` or `index.hbs`; both works.
+    res.render("index", {
+        foodRecords:foodRecords
+    }); // we can put `index` or `index.hbs`; both works.
 })
 
 // 3. START SERVER
